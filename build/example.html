@@ -1,0 +1,922 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>CodeDmx Examples</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="example" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#tutorial" class="toc-h1 toc-link" data-title="Tutorial">Tutorial</a>
+          </li>
+          <li>
+            <a href="#example-static-page" class="toc-h1 toc-link" data-title="Example Static page">Example Static page</a>
+          </li>
+          <li>
+            <a href="#example-routing" class="toc-h1 toc-link" data-title="Example Routing">Example Routing</a>
+          </li>
+          <li>
+            <a href="#example-form-validation" class="toc-h1 toc-link" data-title="Example form validation">Example form validation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#basic-tags" class="toc-h2 toc-link" data-title="Example form validation">Basic tags</a>
+                  </li>
+                  <li>
+                    <a href="#contains" class="toc-h2 toc-link" data-title="Example form validation">Contains</a>
+                  </li>
+                  <li>
+                    <a href="#credit-card" class="toc-h2 toc-link" data-title="Example form validation">Credit card</a>
+                  </li>
+                  <li>
+                    <a href="#custom-validator" class="toc-h2 toc-link" data-title="Example form validation">Custom validator</a>
+                  </li>
+                  <li>
+                    <a href="#escaping-mysql-strings" class="toc-h2 toc-link" data-title="Example form validation">Escaping mysql strings</a>
+                  </li>
+                  <li>
+                    <a href="#explicit-fields" class="toc-h2 toc-link" data-title="Example form validation">Explicit fields</a>
+                  </li>
+                  <li>
+                    <a href="#files" class="toc-h2 toc-link" data-title="Example form validation">Files</a>
+                  </li>
+                  <li>
+                    <a href="#full-example" class="toc-h2 toc-link" data-title="Example form validation">Full example</a>
+                  </li>
+                  <li>
+                    <a href="#guid" class="toc-h2 toc-link" data-title="Example form validation">GUID</a>
+                  </li>
+                  <li>
+                    <a href="#handling-errors" class="toc-h2 toc-link" data-title="Example form validation">Handling Errors</a>
+                  </li>
+                  <li>
+                    <a href="#match" class="toc-h2 toc-link" data-title="Example form validation">Match</a>
+                  </li>
+                  <li>
+                    <a href="#noise-words" class="toc-h2 toc-link" data-title="Example form validation">Noise words</a>
+                  </li>
+                  <li>
+                    <a href="#sanitize-string" class="toc-h2 toc-link" data-title="Example form validation">Sanitize string</a>
+                  </li>
+                  <li>
+                    <a href="#sanitize-whitelist" class="toc-h2 toc-link" data-title="Example form validation">Sanitize whitelist</a>
+                  </li>
+                  <li>
+                    <a href="#street-address" class="toc-h2 toc-link" data-title="Example form validation">Street address</a>
+                  </li>
+                  <li>
+                    <a href="#url-exists" class="toc-h2 toc-link" data-title="Example form validation">URL exists</a>
+                  </li>
+                  <li>
+                    <a href="#utf-8" class="toc-h2 toc-link" data-title="Example form validation">UTF-8</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#example-upload" class="toc-h1 toc-link" data-title="Example upload">Example upload</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='/'>Documentation</a></li>
+            <li><a href='https://github.com/mxra8/slate' target="_blank">Made with Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='tutorial'>Tutorial</h1>
+<p>This tutorial is intended to introduce you to the CodeDmx framework and the basic principles of MVC architecture. It will show you how a basic CodeDmx application is constructed in step-by-step fashion.</p>
+
+<p>In this tutorial, you will be creating a basic news application. You will begin by writing the code that can load static pages. Next, you will create a news section that reads news items from a database. Finally, you’ll add a form to create news items in the database.</p>
+
+<p>This tutorial will primarily focus on:</p>
+
+<ul>
+<li><a href='#example-static-page'>Static pages</a></li>
+<li><a href='#example-routing'>Routing basics</a></li>
+<li><a href='#example-form-validation'>Form validation</a></li>
+<li><a href='#example-upload'>Form upload file</a></li>
+</ul>
+<h1 id='example-static-page'>Example Static page</h1>
+<p>You only have to make a file in View folder (<em>/application/View/</em>) and enter to that url, example:</p>
+
+<p>You need to create a contact page, well, you need to create <em>contact.php</em> file in View folder, then you can type: <em>http://yoursite.com/contact/</em> and this url will enter in <em>contact.php</em> file.</p>
+
+<p>When you type <em>http://yoursite.com/</em> you will enter in default file setted in $GLOBALS[&#39;COD&#39;]-&gt;default variable in this case, by default, the variable has <em>home</em> string.</p>
+
+<p>In that file you have this:</p>
+
+<blockquote>
+<p>Load <em>Header.php</em> and <em>Footer.php</em> files from <em>/application/View/static/</em></p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'Header'</span><span class="p">,</span> <span class="s1">'static'</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+
+home
+
+<span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'Footer'</span><span class="p">,</span> <span class="s1">'static'</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre><h1 id='example-routing'>Example Routing</h1>
+<p>This example can help you to understand how CodeDmx&#39;s Router works.</p>
+
+<p>Imagine that you have a blog site, and you need to get Year, Month, Day, and Article ID of your url to get the information of the Article (like Wordpress works).</p>
+
+<p>Your url is this: <em>http://yoursite.com/news/2018/01/12/458219/</em></p>
+
+<ul>
+<li>Year: 2018</li>
+<li>Month: 01</li>
+<li>Day: 12</li>
+<li>Article ID: 458219</li>
+</ul>
+
+<p>But, we don&#39;t have any rule to get this kind of page... we need to work on it.</p>
+
+<p>First of all we need to open <em>/application/Config/routers.settings.php</em></p>
+
+<blockquote>
+<p>You need to create a new rule</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">COD_Router</span><span class="p">();</span>
+
+<span class="cm">/* ******* NEW RULE ******* */</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span><span class="o">-&gt;</span><span class="na">map</span><span class="p">(</span><span class="s1">'GET|POST'</span><span class="p">,</span> <span class="s1">'/news/[i:year]/[i:month]/[i:day]/[i:article_id]/'</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$year</span><span class="p">,</span> <span class="nv">$month</span><span class="p">,</span> <span class="nv">$day</span><span class="p">,</span> <span class="nv">$article_id</span><span class="p">){</span>
+    <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$year</span><span class="p">;</span> <span class="c1">// Will be 2018
+</span>    <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$month</span><span class="p">;</span> <span class="c1">// Will be 01
+</span>    <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'day'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$day</span><span class="p">;</span> <span class="c1">// Will be 12
+</span>    <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'article_id'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$article_id</span><span class="p">;</span> <span class="c1">// Will be 458219
+</span>
+    <span class="k">require</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">'COD'</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">doc_view</span> <span class="o">.</span> <span class="s1">'news.php'</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="cm">/* ******* NEW RULE ******* */</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span><span class="o">-&gt;</span><span class="na">map</span><span class="p">(</span><span class="s1">'GET|POST'</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">,</span> <span class="k">function</span><span class="p">(){</span>
+    <span class="k">require</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">'COD'</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">doc_view</span> <span class="o">.</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">'COD'</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">default</span> <span class="o">.</span> <span class="s1">'.php'</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="cp">?&gt;</span>
+</code></pre><h1 id='example-form-validation'>Example form validation</h1>
+<p>This example can help you to understand Validation Class.</p>
+<h2 id='basic-tags'>Basic tags</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">validation_rules</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">'comment'</span> <span class="o">=&gt;</span> <span class="s1">'required|max_len,500'</span><span class="p">,</span>
+<span class="p">));</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">filter_rules</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">'comment'</span> <span class="o">=&gt;</span> <span class="s1">'basic_tags'</span><span class="p">,</span>
+<span class="p">));</span>
+<span class="c1">// Valid Data
+</span><span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'comment'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;strong&gt;this is freaking awesome&lt;/strong&gt;&lt;script&gt;alert(1);&lt;/script&gt;'</span>
+<span class="p">);</span>
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span>
+<span class="cm">/*
+Output:
+Array
+(
+    [comment] =&gt; this is freaking awesomealert(1);
+)
+*/</span>
+</code></pre><h2 id='contains'>Contains</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'account_type'</span> <span class="o">=&gt;</span> <span class="s2">"required|contains,pro free basic premium"</span><span class="p">,</span>
+    <span class="s1">'priority'</span>     <span class="o">=&gt;</span> <span class="s2">"required|contains,'low' 'medium' 'very high'"</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="k">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">VALID DATA TEST:</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">;</span>
+
+<span class="c1">// Valid Data
+</span><span class="nv">$_POST_VALID</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'account_type'</span> <span class="o">=&gt;</span> <span class="s1">'pro'</span><span class="p">,</span>
+    <span class="s1">'priority'</span>     <span class="o">=&gt;</span> <span class="s1">'very high'</span>
+<span class="p">);</span>
+<span class="nv">$valid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$_POST_VALID</span><span class="p">,</span> <span class="nv">$rules</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$valid</span> <span class="o">!==</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">get_readable_errors</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"Validation passed! </span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">INVALID DATA TEST:</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="c1">// Invalid
+</span><span class="nv">$_POST_INVALID</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'account_type'</span> <span class="o">=&gt;</span> <span class="s1">'bad'</span><span class="p">,</span>
+    <span class="s1">'priority'</span>     <span class="o">=&gt;</span> <span class="s1">'unknown'</span>
+<span class="p">);</span>
+<span class="nv">$invalid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+    <span class="nv">$_POST_INVALID</span><span class="p">,</span> <span class="nv">$rules</span>
+<span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$invalid</span> <span class="o">!==</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">get_readable_errors</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">;</span>
+    <span class="c1">// Output: The Account Type field needs to contain one of these values: pro, free, basic, premiumThe Priority field needs to contain one of these values: low, medium, very high
+</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Validation passed!</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><h2 id='credit-card'>Credit card</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'cc'</span> <span class="o">=&gt;</span> <span class="s1">'987230234-2498234-24234-23'</span> <span class="c1">// This is not a valid credit card number
+</span><span class="p">);</span>
+<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'cc'</span> <span class="o">=&gt;</span> <span class="s1">'valid_cc'</span>
+<span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$rules</span><span class="p">));</span>
+<span class="cm">/*
+Output:
+Array
+(
+    [0] =&gt; The Cc field needs to contain a valid credit card number
+)
+*/</span>
+</code></pre><h2 id='custom-validator'>Custom validator</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+<span class="c1">// Add the custom validator
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">add_validator</span><span class="p">(</span><span class="s2">"is_object"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$field</span><span class="p">,</span> <span class="nv">$input</span><span class="p">,</span> <span class="nv">$param</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">is_object</span><span class="p">(</span><span class="nv">$input</span><span class="p">[</span><span class="nv">$field</span><span class="p">]);</span>
+<span class="p">});</span>
+<span class="c1">// Generic test data
+</span><span class="nv">$input_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'not_object'</span>   <span class="o">=&gt;</span> <span class="s2">"asdasd"</span><span class="p">,</span>
+    <span class="s1">'valid_object'</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="k">stdClass</span><span class="p">()</span>
+<span class="p">);</span>
+<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'not_object'</span>   <span class="o">=&gt;</span> <span class="s2">"is_object"</span><span class="p">,</span>
+    <span class="s1">'valid_object'</span> <span class="o">=&gt;</span> <span class="s2">"is_object"</span>
+<span class="p">);</span>
+<span class="c1">// METHOD 1 (Long):
+</span><span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+    <span class="nv">$input_data</span><span class="p">,</span> <span class="nv">$rules</span>
+<span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$validated</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Validation passed!"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">get_readable_errors</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// METHOD 2 (Short):
+</span><span class="nv">$is_valid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">(</span><span class="nv">$input_data</span><span class="p">,</span> <span class="nv">$rules</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$is_valid</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Validation passed!"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$is_valid</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre><h2 id='escaping-mysql-strings'>Escaping mysql strings</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s2">"my username"</span><span class="p">,</span>
+    <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s2">"' OR ''='"</span>
+<span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span>
+
+<span class="nv">$filters</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'noise_words'</span><span class="p">,</span>
+    <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'trim|strtolower|addslashes'</span>
+<span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$filters</span><span class="p">));</span>
+
+<span class="cm">/*
+Output:
+Array
+(
+    [username] =&gt; my username
+    [password] =&gt; &amp;#39; OR &amp;#39;&amp;#39;=&amp;#39;
+)
+*/</span>
+
+<span class="nv">$filters</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'noise_words'</span><span class="p">,</span>
+    <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'trim|strtolower|addslashes'</span>
+<span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$filters</span><span class="p">));</span>
+<span class="cm">/*
+Output:
+Array
+(
+    [username] =&gt; username
+    [password] =&gt; &amp;#39; or &amp;#39;&amp;#39;=&amp;#39;
+)
+*/</span>
+</code></pre><h2 id='explicit-fields'>Explicit fields</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'str'</span> <span class="o">=&gt;</span> <span class="kc">null</span>
+<span class="p">);</span>
+<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'str'</span> <span class="o">=&gt;</span> <span class="s1">'required'</span>
+<span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">set_field_name</span><span class="p">(</span><span class="s2">"str"</span><span class="p">,</span> <span class="s2">"Street"</span><span class="p">);</span>
+<span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$rules</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$validated</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Valid Street Address</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$validated</span><span class="p">);</span>
+    <span class="cm">/*
+    Output:
+    Array
+    (
+        [0] =&gt; The Street field is required
+    )
+    */</span>
+<span class="p">}</span>
+</code></pre><h2 id='files'>Files</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$_FILES</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'attachments'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'name'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"test1.png"</span><span class="p">),</span>
+        <span class="s1">'type'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"image/png"</span><span class="p">),</span>
+        <span class="s1">'tmp_name'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"/tmp/phpmFkEUe"</span><span class="p">),</span>
+        <span class="s1">'error'</span>    <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="s1">'size'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">9855</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+<span class="nv">$errors</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+<span class="nv">$length</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'attachments'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]);</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$length</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$struct</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'type'</span>     <span class="o">=&gt;</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'attachments'</span><span class="p">][</span><span class="s1">'type'</span><span class="p">][</span><span class="nv">$i</span><span class="p">],</span>
+        <span class="s1">'error'</span>    <span class="o">=&gt;</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'attachments'</span><span class="p">][</span><span class="s1">'error'</span><span class="p">][</span><span class="nv">$i</span><span class="p">],</span>
+        <span class="s1">'size'</span>     <span class="o">=&gt;</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'attachments'</span><span class="p">][</span><span class="s1">'size'</span><span class="p">][</span><span class="nv">$i</span><span class="p">],</span>
+    <span class="p">);</span>
+
+    <span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">(</span><span class="nv">$struct</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'name'</span>     <span class="o">=&gt;</span> <span class="s1">'required'</span><span class="p">,</span>
+        <span class="s1">'type'</span>     <span class="o">=&gt;</span> <span class="s1">'required'</span><span class="p">,</span>
+        <span class="s1">'tmp_name'</span> <span class="o">=&gt;</span> <span class="s1">'required'</span><span class="p">,</span>
+        <span class="s1">'size'</span>     <span class="o">=&gt;</span> <span class="s1">'required|numeric'</span><span class="p">,</span>
+    <span class="p">));</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$validated</span> <span class="o">!==</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$validated</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$errors</span><span class="p">);</span>
+<span class="cm">/*
+Output:
+Array
+(
+    [0] =&gt; Array
+        (
+            [0] =&gt; The Name field is required
+            [1] =&gt; The Tmp Name field is required
+        )
+
+)
+*/</span>
+</code></pre><h2 id='full-example'>Full example</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+<span class="c1">// Set the data
+</span><span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span>    <span class="o">=&gt;</span> <span class="s1">'SeanNieuwoudt'</span><span class="p">,</span>
+    <span class="s1">'password'</span>    <span class="o">=&gt;</span> <span class="s1">'mypassword'</span><span class="p">,</span>
+    <span class="s1">'email'</span>       <span class="o">=&gt;</span> <span class="s1">'sean@wixel.net'</span><span class="p">,</span>
+    <span class="s1">'gender'</span>      <span class="o">=&gt;</span> <span class="s1">'m'</span><span class="p">,</span>
+    <span class="s1">'credit_card'</span> <span class="o">=&gt;</span> <span class="s1">'9872389-2424-234224-234'</span><span class="p">,</span> <span class="c1">// Obviously an invalid credit card number,
+</span>    <span class="s1">'bio'</span>         <span class="o">=&gt;</span> <span class="s1">'This is good! I think I will switch to another language'</span>
+<span class="p">);</span>
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span> <span class="c1">// You don't have to sanitize, but it's safest to do so.
+</span>
+<span class="c1">// Let's define the rules and filters
+</span><span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span>    <span class="o">=&gt;</span> <span class="s1">'required|alpha_numeric|max_len,100|min_len,6'</span><span class="p">,</span>
+    <span class="s1">'password'</span>    <span class="o">=&gt;</span> <span class="s1">'required|max_len,100|min_len,6'</span><span class="p">,</span>
+    <span class="s1">'email'</span>       <span class="o">=&gt;</span> <span class="s1">'required|valid_email'</span><span class="p">,</span>
+    <span class="s1">'gender'</span>      <span class="o">=&gt;</span> <span class="s1">'required|exact_len,1'</span><span class="p">,</span>
+    <span class="s1">'credit_card'</span> <span class="o">=&gt;</span> <span class="s1">'required|valid_cc'</span><span class="p">,</span>
+    <span class="s1">'bio'</span>         <span class="o">=&gt;</span> <span class="s1">'required'</span>
+<span class="p">);</span>
+<span class="nv">$filters</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span>    <span class="o">=&gt;</span> <span class="s1">'trim|sanitize_string'</span><span class="p">,</span>
+    <span class="s1">'password'</span>    <span class="o">=&gt;</span> <span class="s1">'trim|base64_encode'</span><span class="p">,</span>
+    <span class="s1">'email'</span>       <span class="o">=&gt;</span> <span class="s1">'trim|sanitize_email'</span><span class="p">,</span>
+    <span class="s1">'gender'</span>      <span class="o">=&gt;</span> <span class="s1">'trim'</span>
+<span class="p">);</span>
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$filters</span><span class="p">);</span>
+<span class="c1">// You can run filter() or validate() first
+</span><span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+    <span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$rules</span>
+<span class="p">);</span>
+<span class="c1">// Check if validation was successful
+</span><span class="k">if</span><span class="p">(</span><span class="nv">$validated</span> <span class="o">===</span> <span class="k">TRUE</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Successful Validation</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">;</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span> <span class="c1">// You can now use POST data safely
+</span>    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$validated</span><span class="p">);</span> <span class="c1">// Shows all the rules that failed along with the data
+</span><span class="p">}</span>
+</code></pre><h2 id='guid'>GUID</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'guid'</span> <span class="o">=&gt;</span> <span class="s2">"A98C5A1E-A742-4808-96FA-6F409E799937"</span>
+<span class="p">);</span>
+<span class="nv">$is_valid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'guid'</span> <span class="o">=&gt;</span> <span class="s1">'required|guidv4'</span><span class="p">,</span>
+<span class="p">));</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$is_valid</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// continue
+</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$is_valid</span><span class="p">);</span>
+    <span class="cm">/*
+    Output:
+    Array
+    (
+        [0] =&gt; The Guid field is invalid
+    )
+    */</span>
+<span class="p">}</span>
+</code></pre><h2 id='handling-errors'>Handling Errors</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="c1">// Set the data
+</span><span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span>    <span class="o">=&gt;</span> <span class="s1">'SeanNieuwoudt'</span><span class="p">,</span>
+    <span class="s1">'password'</span>    <span class="o">=&gt;</span> <span class="s1">'mypassword'</span><span class="p">,</span>
+    <span class="s1">'email'</span>       <span class="o">=&gt;</span> <span class="s1">'sean@wixel.net'</span><span class="p">,</span>
+    <span class="s1">'gender'</span>      <span class="o">=&gt;</span> <span class="s1">'m'</span><span class="p">,</span>
+    <span class="s1">'credit_card'</span> <span class="o">=&gt;</span> <span class="s1">'9872389-2424-234224-234'</span><span class="p">,</span> <span class="c1">// Obviously an invalid credit card number,
+</span>    <span class="s1">'bio'</span>         <span class="o">=&gt;</span> <span class="s1">'This is good! I think I will switch to another language'</span>
+<span class="p">);</span>
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span> <span class="c1">// You don't have to sanitize, but it's safest to do so.
+// Let's define the rules and filters
+</span><span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span>    <span class="o">=&gt;</span> <span class="s1">'required|alpha_numeric|max_len,100|min_len,40'</span><span class="p">,</span>
+    <span class="s1">'password'</span>    <span class="o">=&gt;</span> <span class="s1">'required|max_len,100|min_len,6'</span><span class="p">,</span>
+    <span class="s1">'email'</span>       <span class="o">=&gt;</span> <span class="s1">'required|valid_email'</span><span class="p">,</span>
+    <span class="s1">'gender'</span>      <span class="o">=&gt;</span> <span class="s1">'required|exact_len,1'</span><span class="p">,</span>
+    <span class="s1">'credit_card'</span> <span class="o">=&gt;</span> <span class="s1">'required|valid_cc'</span><span class="p">,</span>
+    <span class="s1">'bio'</span>         <span class="o">=&gt;</span> <span class="s1">'required'</span>
+<span class="p">);</span>
+<span class="nv">$filters</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span>    <span class="o">=&gt;</span> <span class="s1">'trim|sanitize_string'</span><span class="p">,</span>
+    <span class="s1">'password'</span>    <span class="o">=&gt;</span> <span class="s1">'trim|base64_encode'</span><span class="p">,</span>
+    <span class="s1">'email'</span>       <span class="o">=&gt;</span> <span class="s1">'trim|sanitize_email'</span><span class="p">,</span>
+    <span class="s1">'gender'</span>      <span class="o">=&gt;</span> <span class="s1">'trim'</span>
+<span class="p">);</span>
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$filters</span><span class="p">);</span>
+<span class="c1">// You can run filter() or validate() first
+</span><span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+    <span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$rules</span>
+<span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$validated</span> <span class="o">===</span> <span class="k">TRUE</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Successful Validation</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">;</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span> <span class="c1">// You can now use POST data safely
+</span>    <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// You should know what form fields to expect, so you can reference them here for custom messages
+</span>    <span class="k">echo</span> <span class="s2">"There were errors with the data you provided:</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+    <span class="k">foreach</span><span class="p">(</span><span class="nv">$validated</span> <span class="k">as</span> <span class="nv">$v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span><span class="p">(</span><span class="nv">$v</span><span class="p">[</span><span class="s1">'field'</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="s1">'credit_card'</span><span class="o">:</span>
+                <span class="k">echo</span> <span class="s2">"- The credit card provided is not valid.</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s1">'username'</span><span class="o">:</span>
+                <span class="k">echo</span> <span class="s2">"- The username provided is not valid.</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>              
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Or you can simply use the built in helper to generate the error messages for you
+</span>    <span class="c1">// Passing a boolean true to is returns the errors as html, otherwise it returns an array
+</span>    <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">get_readable_errors</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre><h2 id='match'>Match</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span>         <span class="o">=&gt;</span> <span class="s2">"myusername"</span><span class="p">,</span>
+    <span class="s1">'password'</span>         <span class="o">=&gt;</span> <span class="s2">"mypassword"</span><span class="p">,</span>
+    <span class="s1">'password_confirm'</span> <span class="o">=&gt;</span> <span class="s2">"mypa33word"</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="nv">$is_valid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'username'</span>         <span class="o">=&gt;</span> <span class="s1">'required|alpha_numeric'</span><span class="p">,</span>
+    <span class="s1">'password'</span>         <span class="o">=&gt;</span> <span class="s1">'required|max_len,100|min_len,6'</span><span class="p">,</span>
+    <span class="s1">'password_confirm'</span> <span class="o">=&gt;</span> <span class="s1">'equalsfield,password'</span><span class="p">,</span>
+<span class="p">));</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$is_valid</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// continue
+</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$is_valid</span><span class="p">);</span>
+    <span class="cm">/*
+    Output:
+    Array
+    (
+        [0] =&gt; The Password Confirm field does not equal password field
+    )
+    */</span>
+<span class="p">}</span>
+</code></pre><h2 id='noise-words'>Noise words</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+<span class="c1">// What are noise words? http://support.dtsearch.com/webhelp/dtsearch/noise_words.htm
+</span><span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'words'</span> <span class="o">=&gt;</span> <span class="s2">"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English"</span>
+<span class="p">);</span>
+<span class="nv">$filters</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'words'</span> <span class="o">=&gt;</span> <span class="s1">'noise_words'</span>
+<span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$filters</span><span class="p">));</span>
+<span class="cm">/*
+Output:
+Array
+(
+    [words] =&gt; long established fact reader will distracted readable content page when looking layout. point using Lorem Ipsum more-or-less normal distribution letters, opposed using 'Content here, content here', making look readable English
+)
+*/</span>
+</code></pre><h2 id='sanitize-string'>Sanitize string</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'string'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;script&gt;alert(1); $("body").remove(); &lt;/script&gt;'</span>
+<span class="p">);</span>
+<span class="nv">$filters</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'string'</span> <span class="o">=&gt;</span> <span class="s1">'sanitize_string'</span>
+<span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$filters</span><span class="p">));</span>
+<span class="cm">/*
+Output:
+Array
+(
+    [string] =&gt; alert(1); $(&amp;#34;body&amp;#34;).remove();
+)
+*/</span>
+</code></pre><h2 id='sanitize-whitelist'>Sanitize whitelist</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s1">'Joe'</span><span class="p">,</span>
+    <span class="s1">'last_name'</span> <span class="o">=&gt;</span> <span class="s1">'Black'</span><span class="p">,</span>
+    <span class="s1">'nickname'</span>  <span class="o">=&gt;</span> <span class="s1">'blackjoe'</span><span class="p">,</span> <span class="c1">// unexpected field
+</span><span class="p">);</span>
+<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s1">'required|valid_name'</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s1">'required|valid_name'</span>
+<span class="p">);</span>
+<span class="sd">/**
+ * You can "whitelist" the submitted fileds: other fields will be ignored.
+ * Pass an array of fields as 2nd argument in 'sanitize' method, e.g.:
+ * $whitelist = array( 'first_name', 'last_name' );
+ *
+ * Tip: you can use the keys of rule/filter array as a whitelist
+ */</span>
+<span class="nv">$whitelist</span> <span class="o">=</span> <span class="nb">array_keys</span><span class="p">(</span><span class="nv">$rules</span><span class="p">);</span>
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span> <span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$whitelist</span> <span class="p">);</span>
+<span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$rules</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span> <span class="nv">$validated</span> <span class="o">===</span> <span class="k">TRUE</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * Now you are sure that the $_POST array contains only the fields
+     * included in whitelist.
+     *
+     * It's a good practice anyway, but it's very useful if you are
+     * using an ORM/active-records library to store data into database
+     * and you have to be sure that the fields match the table columns.
+     *
+     * E.g.: ... $db-&gt;table('products')-&gt;insert($_POST) ...
+     */</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre><h2 id='street-address'>Street address</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'street'</span> <span class="o">=&gt;</span> <span class="s1">'6 Avondans Road'</span>
+<span class="p">);</span>
+<span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'street'</span> <span class="o">=&gt;</span> <span class="s1">'required|street_address'</span>
+<span class="p">));</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$validated</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Valid Street Address</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$validated</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre><h2 id='url-exists'>URL exists</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'url'</span> <span class="o">=&gt;</span> <span class="s1">'http://sudygausdjhasgdjasjhdasd987lkasjhdkasdkjs.com/'</span> <span class="c1">// This url obviously does not exist
+</span><span class="p">);</span>
+<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'url'</span> <span class="o">=&gt;</span> <span class="s1">'url_exists'</span>
+<span class="p">);</span>
+
+<span class="nv">$is_valid</span> <span class="o">=</span> <span class="nv">$tihs</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$rules</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$is_valid</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"The URL provided is valid"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$tihs</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">get_readable_errors</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre><h2 id='utf-8'>UTF-8</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'one'</span> <span class="o">=&gt;</span> <span class="s1">'Freiheit, Mobilität und Unabhängigkeit lebt. ö, Ä, é, or ß'</span><span class="p">,</span>
+    <span class="s1">'two'</span> <span class="o">=&gt;</span> <span class="s1">'ß'</span>
+<span class="p">);</span>
+<span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'one'</span> <span class="o">=&gt;</span> <span class="s1">'required|min_len,10'</span><span class="p">,</span>
+    <span class="s1">'two'</span> <span class="o">=&gt;</span> <span class="s1">'required|min_len,1'</span><span class="p">,</span>
+<span class="p">));</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$validated</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Valid Text</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$validated</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre><h1 id='example-upload'>Example upload</h1>
+<p>This example can help you to understand Uploader Class.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="c1">// Start
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">'upload'</span><span class="p">);</span>
+<span class="c1">// set input( name of input file: show html )
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span> <span class="s2">"my_file"</span> <span class="p">);</span>
+<span class="c1">// Directory output
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">destination</span><span class="p">(</span> <span class="s2">"upload"</span> <span class="p">);</span>
+<span class="c1">//Use "copy" function( Default: move_uploaded_file )
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">set_upload_function</span><span class="p">(</span><span class="s2">"copy"</span><span class="p">);</span>
+<span class="c1">//Set file size limit( Formats: 10M , 10MB, 10mb, 10485760, etc )
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">max_file_size</span><span class="p">(</span><span class="s2">"10M"</span><span class="p">);</span>
+<span class="c1">// Callback in before upload
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">callback_input</span><span class="p">(</span><span class="k">function</span><span class="p">(</span> <span class="nv">$data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Start!&lt;/h3&gt;"</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// Callback in after upload
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">callback_output</span><span class="p">(</span><span class="k">function</span><span class="p">(</span> <span class="nv">$data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;h3&gt;End!&lt;/h3&gt;"</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">status</span> <span class="o">===</span> <span class="kc">true</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"&lt;p&gt;The "</span><span class="o">.</span><span class="nv">$data</span><span class="o">-&gt;</span><span class="na">filename</span><span class="o">.</span><span class="s2">" file is upload&lt;/p&gt;"</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"&lt;p&gt;The "</span><span class="o">.</span><span class="nv">$data</span><span class="o">-&gt;</span><span class="na">filename</span><span class="o">.</span><span class="s2">" file could not be uploaded to the server&lt;/p&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">// Set destination directory( output file )
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">destination</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">));</span>
+<span class="c1">// Set multiples mime types
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">allowed_mime_types</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">'image/jpeg'</span><span class="p">,</span>
+    <span class="s1">'image/jpg'</span><span class="p">,</span>
+    <span class="s1">'image/pjpeg'</span><span class="p">,</span>
+    <span class="s1">'image/png'</span><span class="p">,</span>
+<span class="p">));</span>
+<span class="c1">// Set only one mime type
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">allow_mime_type</span><span class="p">(</span><span class="s1">'image/gif'</span><span class="p">);</span>
+<span class="c1">// Set filename output
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">filename</span><span class="p">(</span><span class="s2">"myfile.%s"</span><span class="p">);</span>
+<span class="c1">// Allow overwriting if exists file
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">allow_overwriting</span><span class="p">();</span>
+<span class="c1">// Upload now!
+</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+<span class="c1">// Get all operation info
+</span><span class="nb">highlight_string</span><span class="p">(</span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">get_info</span><span class="p">(),</span><span class="kc">true</span><span class="p">));</span>
+<span class="cp">?&gt;</span>
+
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Uploader Example<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=utf-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">""</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span> <span class="na">accept-charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"my_file"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Upload now!"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
